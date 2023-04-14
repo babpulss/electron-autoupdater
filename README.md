@@ -2,7 +2,7 @@
 
 1. 일렉트론 업데이터가 작동하는 흐름을 대강 잡으니까 구현하기가 쉬워졌다. 최신 버전을 검증하는 과정은 서버가 아닌 클라이언트였다.
 2. 따라서 서버는 yml, blockmap과 exe에 대한 최신버전만 잘 가지고 제때 제때 클라이언트에게 전달만 해주면 그만이다.
-  -   autoUpdater.checkForUpdatesAndNotify()를 실행하면 package.json에서 설정한 빌드.퍼블리시.url로 요청을 하되 디폴트 채널값이 latest.yml의 주소인 localhost:3000/download/latest.yml 요청한다
+  -   autoUpdater.checkForUpdatesAndNotify()를 실행하면 package.json에서 설정한 빌드.퍼블리시.url로 요청을 하되 디폴트 채널값이 latest.yml의 주소인 localhost:3030/download/latest.yml 요청한다
   -   latest.yml로 버전을 비교한 뒤 버전이 맞지 않으면 같은 경로로 blockmap을 요청하고 체크섬 검증 후 실제 exe파일을 요청한다.
   -   다운로드한 파일은 C:\Users\\${user}\AppData\Local\\${appName}에 저장된다.
   -   express로 로컬서버를 실행한 후 서버로 요청되는 파라미터를 출력하면 같은 경로를 통해 순차적으로 파일을 요청하는 사실을 알 수 있다.
